@@ -4,7 +4,7 @@ import VideoCard from "./VideoCard";
 
 function RecommendedVideos() {
   return (
-    <div class="recommendedVideos">
+    <div className="recommendedVideos">
       <h2>Recommended</h2>
       <div className="recommendedVideos_videos">
         <VideoCard
