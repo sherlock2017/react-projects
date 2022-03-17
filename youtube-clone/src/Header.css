@@ -1,0 +1,50 @@
+.header {
+    /* this will make everything under it to be available become flexible */
+    display: flex;
+    /* this will align all things in vertically center */
+    align-items: center; 
+    /* this will give equal space between the child (3 divs) of header */
+    justify-content: space-between;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+}
+
+.header__logo {
+    height: 25px;
+    /* it if was a png or jpg it could have been sitorted for that you can user object-fit: contain */
+    /* object-fit: contain; */
+    margin-left: 20px;
+}
+
+.header__input {
+    display: flex;
+    /* this will vertically align center to input and search icon */
+    align-items: center;
+    border: 1px solid black;
+    width: 40%;
+}
+
+.header__input > input {
+    /* user as much width available in container */
+    flex: 1;
+    border: none;
+}
+
+.header__inputButton {
+    width: 50px !important;
+    background-color: #fafafa;
+    border-left: 1px solid lightgrey;
+    color: gray;
+}
+
+.header__icons {
+    display: flex;
+    align-items: center;
+}
+
+.header__icon {
+    margin-right: 5px;
+}
