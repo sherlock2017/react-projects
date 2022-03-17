@@ -1,5 +1,7 @@
 import "./App.css";
 import Header from "./Header";
+import RecommendedVideos from "./RecommendedVideos";
+import Sidebar from "./Sidebar";
 
 function App() {
   return (
@@ -8,49 +10,14 @@ function App() {
 
       {/* Header - Build <Header> component*/}
       <Header />
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
 
-      {/* Sidebar - Build <Sidebar> component*/}
-      {/* Recommendations - Build <Recommendations> component*/}
+      <div className="app__page">
+        {/* Sidebar - Build <Sidebar> component*/}
+        <Sidebar />
+
+        {/* Recommendations - Build <Recommendations> component*/}
+        <RecommendedVideos />
+      </div>
     </div>
   );
 }

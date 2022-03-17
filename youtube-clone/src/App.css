@@ -1,0 +1,4 @@
+.app__page {
+  /* this will bring sidebar and recommendedVideos component next to each other */
+  display: flex;
+}
