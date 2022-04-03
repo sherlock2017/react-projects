@@ -1,9 +1,11 @@
-import './App.css';
+import "./App.css";
+import CourseRegistration from "./CourseRegistration";
+
 
 function App() {
   return (
     <div className="App">
-      <h2>Hello MVP 🔥</h2>
+      <CourseRegistration />
     </div>
   );
 }
