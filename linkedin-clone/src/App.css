@@ -8,4 +8,5 @@
 
 .app__body {
   display: flex;
-}
+  padding-top: 15px;
+} 
