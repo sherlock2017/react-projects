@@ -2,9 +2,27 @@ import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import "./Header.css";
 import HeaderOption from "./HeaderOption";
-import { BusinessCenter, Home, Message, Notifications, People, SupervisorAccount } from "@mui/icons-material";
+import {
+  BusinessCenter,
+  Home,
+  Message,
+  Notifications,
+  People,
+  SupervisorAccount,
+} from "@mui/icons-material";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "./features/userSlice";
+import { auth } from "./firebase";
 
 function Header() {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  const logoutOfApp = () => {
+    dispatch(logout());
+    auth.signOut();
+  };
+
   return (
     <div className="header">
       <div className="header__left">
@@ -20,13 +38,17 @@ function Header() {
         </div>
       </div>
       <div className="header__right">
-          <HeaderOption Icon={Home} title="Home"/>
-          <HeaderOption Icon={SupervisorAccount} title="My Network"/>
-          <HeaderOption Icon={BusinessCenter} title="Jobs"/>
-          <HeaderOption Icon={Message} title="Message"/>
-          <HeaderOption Icon={Notifications} title="Notifications"/>
+        <HeaderOption Icon={Home} title="Home" />
+        <HeaderOption Icon={SupervisorAccount} title="My Network" />
+        <HeaderOption Icon={BusinessCenter} title="Jobs" />
+        <HeaderOption Icon={Message} title="Message" />
+        <HeaderOption Icon={Notifications} title="Notifications" />
 
-          <HeaderOption avatar="https://media-exp1.licdn.com/dms/image/C5603AQE1AHiHmVO46A/profile-displayphoto-shrink_100_100/0/1621942211165?e=1654732800&v=beta&t=Ve79MZJTuv3XnVWQ85o8Nb1X32p7TLUwo8tmVqAeJOY" title="Me"/>
+        <HeaderOption
+          onClick={logoutOfApp}
+          title="Me"
+          avatar={true}
+        />
       </div>
     </div>
   );
