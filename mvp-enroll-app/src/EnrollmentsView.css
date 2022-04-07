@@ -1,0 +1,11 @@
+.enrollmentsView {
+    margin: 30px;
+    border: 1px solid #e0dfdb;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

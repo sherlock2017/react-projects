@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { Alert, Box, Button, Chip, Snackbar, Stack, TextField } from "@mui/material";
+import { Alert, Box, Button, Chip, InputAdornment, Snackbar, Stack, TextField } from "@mui/material";
 import "./CourseRegistration.css";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
@@ -7,6 +7,7 @@ import DatePicker from "@mui/lab/DatePicker";
 import MenuItem from "@mui/material/MenuItem";
 import { db } from "./firebase";
 import firebase from "firebase/compat/app";
+import { AccountCircle, CalendarMonth, Email, FlagOutlined, MailOutlined, MenuBook, MenuBookOutlined, MobileFriendly, PermIdentity, Wc, WhatsApp } from "@mui/icons-material";
 
 const genders = [
   { key: "M", value: "Male" },
@@ -70,9 +71,18 @@ function CourseRegistration() {
 
   return (
     <div className="courseRegistration">
-      <h2>Register for Course</h2>
-      <Snackbar open={open} autoHideDuration={3000} onClose={() => setOpen(false)}>
-        <Alert onClose={() => setOpen(false)} severity="success" sx={{ width: '100%' }}>
+      <h1>Enroll for Course</h1>
+      <p>Here you can enroll for your course on your comfort</p>
+      <Snackbar
+        open={open}
+        autoHideDuration={3000}
+        onClose={() => setOpen(false)}
+      >
+        <Alert
+          onClose={() => setOpen(false)}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
           {msg}
         </Alert>
       </Snackbar>
@@ -97,6 +107,7 @@ function CourseRegistration() {
             id="fullName"
             margin="normal"
             label="Full Name"
+            placeholder="Full Name"
             variant="outlined"
             onChange={(e) => setFullName(e.target.value)}
           />
@@ -164,7 +175,7 @@ function CourseRegistration() {
             label="Gender"
             value={gender}
             onChange={(e) => setGender(e.target.value)}
-            style={{textAlign: 'left'}}
+            style={{ textAlign: "left" }}
           >
             {genders.map((option) => (
               <MenuItem key={option.key} value={option.value}>
@@ -210,7 +221,7 @@ function CourseRegistration() {
             label="Course"
             value={course}
             onChange={(e) => setCourse(e.target.value)}
-            style={{textAlign: 'left'}}
+            style={{ textAlign: "left" }}
           >
             {courses.map((option) => (
               <MenuItem key={option.key} value={option.value}>
@@ -223,7 +234,9 @@ function CourseRegistration() {
       {/* Course timing  */}
       <span className="courseRegistration__timings">
         Course Suitable Timing
-        <b className="courseRegistration__selectedTime">{suitableTiming && ' - '+suitableTiming}</b>
+        <b className="courseRegistration__selectedTime">
+          {suitableTiming && " - " + suitableTiming}
+        </b>
       </span>
       <Stack
         direction={{ xs: "column", sm: "row" }}
@@ -250,9 +263,6 @@ function CourseRegistration() {
       >
         Enroll
       </Button>
-
-
-      
     </div>
   );
 }
